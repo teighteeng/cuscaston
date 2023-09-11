@@ -5,12 +5,18 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  i18next:
+    specifier: ^23.5.1
+    version: 23.5.1
   react:
     specifier: ^18.2.0
     version: 18.2.0
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
+  react-i18next:
+    specifier: ^13.2.2
+    version: 13.2.2(i18next@23.5.1)(react-dom@18.2.0)(react@18.2.0)
   react-redux:
     specifier: ^8.1.2
     version: 8.1.2(@types/react-dom@18.2.7)(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)(redux@4.2.1)
@@ -25,12 +31,18 @@ dependencies:
     version: 2.4.2(redux@4.2.1)
 
 devDependencies:
+  '@types/i18next':
+    specifier: ^13.0.0
+    version: 13.0.0
   '@types/react':
     specifier: ^18.2.15
     version: 18.2.21
   '@types/react-dom':
     specifier: ^18.2.7
     version: 18.2.7
+  '@types/react-i18next':
+    specifier: ^8.1.0
+    version: 8.1.0(i18next@23.5.1)(react-dom@18.2.0)(react@18.2.0)
   '@types/react-redux':
     specifier: ^7.1.26
     version: 7.1.26
@@ -625,6 +637,13 @@ packages:
       '@types/react': 18.2.21
       hoist-non-react-statics: 3.3.2
 
+  /@types/i18next@13.0.0:
+    resolution: {integrity: sha512-gp/SIShAuf4WOqi8ey0nuI7qfWaVpMNCcs/xLygrh/QTQIXmlDC1E0TtVejweNW+7SGDY7g0lyxyKZIJuCKIJw==}
+    deprecated: This is a stub types definition. i18next provides its own type definitions, so you do not need this installed.
+    dependencies:
+      i18next: 23.5.1
+    dev: true
+
   /@types/json-schema@7.0.12:
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==}
     dev: true
@@ -636,6 +655,18 @@ packages:
     resolution: {integrity: sha512-GRaAEriuT4zp9N4p1i8BDBYmEyfo+xQ3yHjJU4eiK5NDa1RmUZG+unZABUTK4/Ox/M+GaHwb6Ow8rUITrtjszA==}
     dependencies:
       '@types/react': 18.2.21
+
+  /@types/react-i18next@8.1.0(i18next@23.5.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-d4xhcjX5b3roNMObRNMfb1HinHQlQLPo8xlDj60dnHeeAw2bBymR2cy/l1giJpHzo/ZFgSvgVUvIWr4kCrenCg==}
+    deprecated: This is a stub types definition. react-i18next provides its own type definitions, so you do not need this installed.
+    dependencies:
+      react-i18next: 13.2.2(i18next@23.5.1)(react-dom@18.2.0)(react@18.2.0)
+    transitivePeerDependencies:
+      - i18next
+      - react
+      - react-dom
+      - react-native
+    dev: true
 
   /@types/react-redux@7.1.26:
     resolution: {integrity: sha512-UKPo7Cm7rswYU6PH6CmTNCRv5NYF3HrgKuHEYTK8g/3czYLrUux50gQ2pkxc9c7ZpQZi+PNhgmI8oNIRoiVIxg==}
@@ -1396,6 +1427,16 @@ packages:
     dependencies:
       react-is: 16.13.1
 
+  /html-parse-stringify@3.0.1:
+    resolution: {integrity: sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==}
+    dependencies:
+      void-elements: 3.1.0
+
+  /i18next@23.5.1:
+    resolution: {integrity: sha512-JelYzcaCoFDaa+Ysbfz2JsGAKkrHiMG6S61+HLBUEIPaF40WMwW9hCPymlQGrP+wWawKxKPuSuD71WZscCsWHg==}
+    dependencies:
+      '@babel/runtime': 7.22.11
+
   /ignore@5.2.4:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
     engines: {node: '>= 4'}
@@ -1546,7 +1587,6 @@ packages:
     hasBin: true
     dependencies:
       js-tokens: 4.0.0
-    dev: false
 
   /lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
@@ -1800,7 +1840,25 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
-    dev: false
+
+  /react-i18next@13.2.2(i18next@23.5.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-+nFUkbRByFwnrfDcYqvzBuaeZb+nACHx+fAWN/pZMddWOCJH5hoc21+Sa/N/Lqi6ne6/9wC/qRGOoQhJa6IkEQ==}
+    peerDependencies:
+      i18next: '>= 23.2.3'
+      react: '>= 16.8.0'
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.22.11
+      html-parse-stringify: 3.0.1
+      i18next: 23.5.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
 
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -1853,7 +1911,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
-    dev: false
 
   /read-cache@1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
@@ -1947,7 +2004,6 @@ packages:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
     dependencies:
       loose-envify: 1.4.0
-    dev: false
 
   /semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
@@ -2184,6 +2240,10 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
+
+  /void-elements@3.1.0:
+    resolution: {integrity: sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==}
+    engines: {node: '>=0.10.0'}
 
   /which@2.0.2:
     resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}

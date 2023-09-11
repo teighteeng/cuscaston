@@ -1,16 +1,14 @@
-import TheHeader from './components/TheHeader'
-import TheFooter from './components/TheFooter'
+import TheHeader from "./components/TheHeader";
+import TheFooter from "./components/TheFooter";
 
 function App() {
   return (
     <>
       <TheHeader />
-      <main>
-        Content
-      </main>
+      <main className="pt-content-s min-h-screen">Content</main>
       <TheFooter />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
